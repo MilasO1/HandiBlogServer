@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Handiblog</h1>
+    <% if (articles.length > 0) { %>
+        <div class="article-list">
+            <% articles.forEach(article => { %>
+                <div class="article-card">
+                    <h2><%= article.title %></h2>
+                    <p><%= article.description %></p>
+                    <a href="/article/<%= article.id %>">Read More</a>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No articles found.</p>
+    <% } %>
+    
+</body>
+</html>

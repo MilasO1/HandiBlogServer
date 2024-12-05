@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <h1>Admin Panel</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Content</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.forEach(article => { %>
+                <tr>
+                    <td><%= article.id %></td>
+                    <td><%= article.title %></td>
+                    <td><%= article.type %></td>
+                    <td><%= article.image %></td>
+                    <td><%= article.description %></td>
+                    <td><%= article.content %></td>
+                    <td>
+                        <a href="/admin/edit/<%= article.id %>">Edit</a>
+                        <a href="/admin/delete/<%= article.id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="/admin/add">Add New Article</a>
+
+</body>
+</html>
